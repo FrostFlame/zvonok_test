@@ -1,0 +1,5 @@
+select * from article a
+where not exists (
+  select 1 from comment b
+  where b.article_id = a.id
+)
